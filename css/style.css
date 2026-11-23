@@ -1,6 +1,16 @@
 /* -------------------------------- */
 /* Configuración inicial de estilos */
 /* -------------------------------- */
+@font-face{
+    font-family: 'BubblegumSans-Regular';
+    src: url(../fonts/BubblegumSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'SedanSC-Regular';
+    src: url(../fonts/SedanSC-Regular.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -31,13 +41,10 @@
 
 .logo {
     color: white;
-    font-size: 24px;
-    font-weight: bold;
 }
 
-.logo img{
-    width: 50px;
-    height: 50px;
+.logo p{
+    font: 1.5em 'SedanSC-Regular', sans-serif;
 }
 
 .menu {
@@ -51,11 +58,37 @@
 .menu a{
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    /* font-size: 16px; */
+    font: 16px 'SedanSC-Regular', sans-serif;
 }
 
 .menu a:hover {
     color: #f0c674;
+}
+
+.desplegable {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1c1c1d;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+    z-index: 10;
+}
+
+.desplegable:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
 }
 
 /* ------------------------------- */
@@ -82,6 +115,10 @@
 
     color: white;
     text-align: center;
+}
+
+.portada h1{
+    font: 4em 'BubblegumSans-Regular',sans-serif;
 }
 
 /* ------------------------------- */
@@ -119,7 +156,7 @@
 
 .tarjeta img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -198,7 +235,55 @@
     margin-top: 40px;
 }
 
+.footer h3{
+    font: 1.5em 'SedanSC-Regular',sans-serif;
+}
+
 .footer p {
     font-size: 14px;
     margin-top: 20px;
+}
+
+/* ------------------------------- */
+/*    Contenedor de las entradas   */
+/* ------------------------------- */
+.entradas {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.entrada {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.entrada:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.imagen-entrada {
+    flex: 1;
+}
+
+.imagen-entrada img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.texto-entrada {
+    flex: 1;
+    padding: 20px;
+}
+
+.texto-entrada h2{
+    margin-bottom:10px;
+}
+
+.texto-entrada p{
+    line-height: 1.3;
+    text-align: justify;
 }
